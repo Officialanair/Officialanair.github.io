@@ -79,6 +79,35 @@
       font-size: 1.6rem;
       margin-top: 1.5rem;
     }
+
+      /* 🎊 CONFETTI */
+    .confetti {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 10;
+    }
+
+    .confetti-piece {
+      position: absolute;
+      width: 10px;
+      height: 14px;
+      background: red;
+      opacity: 0.8;
+      animation: fall 2s linear forwards;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-10vh) rotate(0deg);
+      }
+      100% {
+        transform: translateY(110vh) rotate(720deg);
+      }
   </style>
 </head>
 
