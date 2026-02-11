@@ -28,6 +28,14 @@
       z-index: 2;
     }
 
+    .valentine-img {
+      width: 100%;
+      max-width: 250px;
+      border-radius: 15px;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
     h1 {
       margin-bottom: 1rem;
     }
@@ -68,25 +76,31 @@
     }
 
     #message {
-      font-size: 1.5rem;
-      margin-top: 1rem;
+      font-size: 1.6rem;
+      margin-top: 1.5rem;
     }
   </style>
 </head>
 
 <body>
   <div class="card">
-    <h1>Hey Big M 💖</h1>
+    <!-- Image -->
+    <img
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2wnfFSjHoEhCfzW8tNTewNfiZXeKBpFjhFQ&s"
+      class="valentine-img"
+    />
+
+    <h1>Hey Moti 💖</h1>
     <p>Will you be my Valentine?</p>
 
     <div class="buttons">
       <button id="yesBtn">Yes 💕</button>
-      <button id="noBtn">No 🙃</button>
+      <button id="noBtn">Nah 🙃</button>
     </div>
 
     <div id="message" class="hidden">
-      YAYYYYY 🥰💘<br>
-      Best decision ever ❤️
+      Type shi <br>
+      You won't regret it ❤️
     </div>
   </div>
 
@@ -100,9 +114,11 @@
 
     noBtn.addEventListener("click", () => {
       scale += 0.5;
+
+      // Grow the Yes button
       yesBtn.style.transform = `scale(${scale})`;
 
-      // Once it’s huge, center it on screen
+      // When it starts getting ridiculous
       if (scale > 5) {
         yesBtn.style.position = "fixed";
         yesBtn.style.top = "50%";
@@ -112,11 +128,12 @@
         yesBtn.style.fontSize = "2rem";
       }
 
-      // When it basically fills the screen
+      // Full screen takeover
       if (scale > 8) {
         yesBtn.style.width = "100vw";
         yesBtn.style.height = "100vh";
         yesBtn.style.borderRadius = "0";
+        yesBtn.style.fontSize = "3rem";
         yesBtn.innerText = "YES 💖";
       }
     });
